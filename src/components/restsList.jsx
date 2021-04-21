@@ -24,7 +24,7 @@ class RestaurantsList extends Component {
     getPageData = () => {
         const { rests, searchQuery } = this.state;
         let data = rests;
-        data = (searchQuery !== "") ? data.filter(r => r.name.toLowerCase().startsWith(searchQuery.toLowerCase())) : data;
+        data = (searchQuery !== "") ? data.filter(r => r.name.toLowerCase().includes(searchQuery.toLowerCase())) : data;
         return data
     }
 

@@ -24,7 +24,11 @@ const rests = [
     },
 
     {
+<<<<<<< HEAD
         _id: "5b21ca3eeb7f6fbccd471816",
+=======
+        _id: "5b21ca3eeb7f6fbccd471815",
+>>>>>>> a114a7afb6cda4901b5bec48a9d6c42d8e666b31
         imgUrl: "https://picsum.photos/id/625/200/300",
         name: "CheesCake Factory",
         tags: ["Arabic", "Lebenese", "Chinese"],

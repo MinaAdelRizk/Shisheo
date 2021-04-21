@@ -1,10 +1,13 @@
 // import logo from './logo.svg';
 import React from 'react';
 import RestaurantsList from './components/restsList'
+<<<<<<< HEAD
 import Map from './components/map'
 import NavBar from './components/navBar'
 import NotFound from './components/notFound'
 import { Switch, Route, Redirect } from 'react-router-dom';
+=======
+>>>>>>> a114a7afb6cda4901b5bec48a9d6c42d8e666b31
 
 import './App.css';
 

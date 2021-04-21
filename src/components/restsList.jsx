@@ -1,30 +1,53 @@
 import React, { Component } from 'react';
-import RestaurantCard from './restCard';
-import { getRestaurants } from './../services/fakeRestServices';
 
+import RestaurantCard from './restCard';
+import SearchBox from '../common/searchBox';
+
+import { getRestaurants } from './../services/fakeRestServices';
 
 class RestaurantsList extends Component {
     state = {
-        rests: []
+        searchQuery: "",
+        rests: [],
+        currentPage: 1
     }
 
     componentDidMount() {
         const rests = getRestaurants();
         this.setState({ rests })
-        console.log("restaurants in restsList", rests)
+    }
+
+    handleSearch = query => {
+        this.setState({ searchQuery: query, currentPage: 1 });
+    }
+
+    getPageData = () => {
+        const { rests, searchQuery } = this.state;
+        let data = rests;
+        data = (searchQuery !== "") ? data.filter(r => r.name.toLowerCase().startsWith(searchQuery.toLowerCase())) : data;
+        return data
     }
 
     render() {
 
-        const { rests } = this.state;
+        const data = this.getPageData();
+
+        const { searchQuery } = this.state;
 
         return (
             <div>
+
+                <SearchBox
+                    value={searchQuery}
+                    onChange={this.handleSearch}
+                />
+
                 <ul className="p-0">
-                    {rests.map(rest =>
-                        <RestaurantCard rest={rest} />
+                    {data.map(rest =>
+                        <RestaurantCard rest={rest} key={rest._id} />
                     )}
                 </ul>
+
             </div>
         );
     }

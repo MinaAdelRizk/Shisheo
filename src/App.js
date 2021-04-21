@@ -7,9 +7,11 @@ function App() {
   return (
     <div className="container">
       <div className="App">
+
         <h1>Shisheo</h1>
-        <h3>Search Bar</h3>
+
         <RestaurantsList />
+
       </div>
 
     </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function RestaurantCard({ rest }) {
     return (
-        <div class="card mb-3">
+        <div className="card mb-3">
 
             <img className="card-img-top" src={rest.imgUrl} alt="Restaurant Image Unavailable" />
 
@@ -14,7 +14,7 @@ function RestaurantCard({ rest }) {
                     <p className="card-text">
                         <small className="text-muted">Delivery: AED {rest.deliveryCharges}</small><br />
                     </p>
-                    <p className="card-text promo"><i class="fa fa-tag"></i> {rest.promo}</p>
+                    <p className="card-text promo"><i className="fa fa-tag"></i> {rest.promo}</p>
                 </div>
 
                 <div className="right-side">

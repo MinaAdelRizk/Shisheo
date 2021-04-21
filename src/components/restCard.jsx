@@ -1,27 +1,37 @@
 import React from 'react';
 
-function RestaurantCard({ rest }) {
+import Rating from '@material-ui/lab/Rating';
+import StarBorderIcon from '@material-ui/icons/esm/StarBorder';
+
+// import { Rating } from '@material-ui/core'
+
+function RestaurantCard({ rest: r }) {
     return (
         <div className="card mb-3">
 
-            <img className="card-img-top" src={rest.imgUrl} alt="Restaurant Image Unavailable" />
+            <img className="card-img-top" src={r.imgUrl} alt="Restaurant Image Unavailable" />
 
             <div className="card-body">
 
                 <div className="left-side">
-                    <h5 className="card-title">{rest.name}</h5>
-                    <p className="card-text">{rest.tags.map(t => `${t}, `)}</p>
+                    <h5 className="card-title">{r.name}</h5>
+                    <p className="card-text">{r.tags.map(t => `${t}, `)}</p>
                     <p className="card-text">
-                        <small className="text-muted">Delivery: AED {rest.deliveryCharges}</small><br />
+                        <small className="text-muted">Delivery: AED {r.deliveryCharges}</small><br />
                     </p>
-                    <p className="card-text promo"><i className="fa fa-tag"></i> {rest.promo}</p>
+                    <p className="card-text promo"><i className="fa fa-tag"></i> {r.promo}</p>
                 </div>
 
                 <div className="right-side">
                     <p className="card-text">
-                        <small className="text-muted rt">Rate: {rest.rating}</small><br />
-                        <small className="text-muted rt">Delivery within {rest.deliveryTime} min</small><br />
-                        <small className="text-muted rt">{rest.paymentMethods}</small><br />
+                        <Rating
+                            name="half-rating-read"
+                            defaultValue={r.rating}
+                            precision={0.5}
+                            emptyIcon={<StarBorderIcon fontSize="inherit" />}
+                            readOnly /><br />
+                        <small className="text-muted rt">Delivery with {r.deliveryTime} min</small><br />
+                        <small className="text-muted rt">{r.paymentMethods}</small><br />
                     </p>
 
                 </div>

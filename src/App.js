@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 
 import RestaurantsList from './components/restsList'
+
 import './App.css';
 
 function App() {

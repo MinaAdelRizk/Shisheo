@@ -35,7 +35,7 @@ class RestaurantsList extends Component {
         const { searchQuery } = this.state;
 
         return (
-            <div>
+            <div className="page-holder">
 
                 <SearchBox
                     value={searchQuery}

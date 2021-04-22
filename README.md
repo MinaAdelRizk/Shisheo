@@ -1,3 +1,5 @@
+# To Run the project, please use the command "npm i" in the root directory then "npm start"
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -3,10 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@fortawesome/react-fontawesome": "^0.1.14",
-=======
->>>>>>> a114a7afb6cda4901b5bec48a9d6c42d8e666b31
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "*",
@@ -15,12 +12,11 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^4.6.0",
     "font-awesome": "^4.7.0",
+    "google-map-react": "^2.1.9",
+    "lodash": "^4.17.21",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-<<<<<<< HEAD
     "react-router-dom": "^5.2.0",
-=======
->>>>>>> a114a7afb6cda4901b5bec48a9d6c42d8e666b31
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.1"
   },

@@ -1,3 +1,4 @@
+import _ from "lodash"
 
 const rests = [
     {
@@ -9,7 +10,11 @@ const rests = [
         promo: "20% Off On Selected Items",
         rating: 4.5,
         deliveryTime: 25,
-        paymentMethods: "Cash-On-Delivery"
+        paymentMethods: "Cash-On-Delivery",
+        location: {
+            lat: 29.117676,
+            lng: 55.201829
+        }
     },
     {
         _id: "5b21ca3eeb7f6fbccd471815",
@@ -20,15 +25,15 @@ const rests = [
         promo: "20% Off On Selected Items",
         rating: 4.5,
         deliveryTime: 25,
-        paymentMethods: "Cash-On-Delivery"
+        paymentMethods: "Cash-On-Delivery",
+        location: {
+            lat: 28.117678,
+            lng: 55.401828
+        }
     },
 
     {
-<<<<<<< HEAD
         _id: "5b21ca3eeb7f6fbccd471816",
-=======
-        _id: "5b21ca3eeb7f6fbccd471815",
->>>>>>> a114a7afb6cda4901b5bec48a9d6c42d8e666b31
         imgUrl: "https://picsum.photos/id/625/200/300",
         name: "CheesCake Factory",
         tags: ["Arabic", "Lebenese", "Chinese"],
@@ -36,7 +41,11 @@ const rests = [
         promo: "20% Off On Selected Items",
         rating: 3.5,
         deliveryTime: 25,
-        paymentMethods: "Cash-On-Delivery"
+        paymentMethods: "Cash-On-Delivery",
+        location: {
+            lat: 26.117679,
+            lng: 55.301827
+        }
     }
 ]
 
@@ -47,3 +56,7 @@ export function getRestaurants() {
 export function getRestaurant(id) {
     return rests.find(r => r._id === id);
 }
+
+// export function getLocations() {
+//     return _.uniq(rests.map(r => r.location));
+// }

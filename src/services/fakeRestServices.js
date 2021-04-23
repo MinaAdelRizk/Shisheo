@@ -8,12 +8,12 @@ const rests = [
         tags: ["Arabic", "Lebenese", "Chinese"],
         deliveryCharges: 10,
         promo: "20% Off On Selected Items",
-        rating: 4.5,
+        rating: 3.5,
         deliveryTime: 25,
         paymentMethods: "Cash-On-Delivery",
         location: {
-            lat: 29.117676,
-            lng: 55.201829
+            lat: 25.136979,
+            lng: 55.218128
         }
     },
     {
@@ -27,8 +27,8 @@ const rests = [
         deliveryTime: 25,
         paymentMethods: "Cash-On-Delivery",
         location: {
-            lat: 28.117678,
-            lng: 55.401828
+            lat: 25.126465,
+            lng: 55.203476
         }
     },
 
@@ -43,8 +43,8 @@ const rests = [
         deliveryTime: 25,
         paymentMethods: "Cash-On-Delivery",
         location: {
-            lat: 26.117679,
-            lng: 55.301827
+            lat: 25.097352,
+            lng: 55.175098
         }
     }
 ]
@@ -56,7 +56,3 @@ export function getRestaurants() {
 export function getRestaurant(id) {
     return rests.find(r => r._id === id);
 }
-
-// export function getLocations() {
-//     return _.uniq(rests.map(r => r.location));
-// }

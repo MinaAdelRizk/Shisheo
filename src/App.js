@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React from 'react';
 import RestaurantsList from './components/restsList'
-import Map from './components/map'
+import RestsMap from './components/restsMap'
 import NavBar from './components/navBar'
 import NotFound from './components/notFound'
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -15,13 +15,9 @@ function App() {
 
       <div className="App">
 
-        <div className="logo-holder">
-          <h1>Shisheo</h1>
-        </div>
-
         <Switch>
           <Route path="/home" component={RestaurantsList} />
-          <Route path="/map" render={props => <Map {...props} />} />
+          <Route path="/locations" render={RestsMap} />
           <Route path="/not-found" component={NotFound} />
           <Redirect exact from="/" to="/home" />
           <Redirect to="/not-found" />

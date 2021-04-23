@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-
 import RestaurantCard from './restCard';
 import SearchBox from '../common/searchBox';
-
 import { getRestaurants } from './../services/fakeRestServices';
 
 class RestaurantsList extends Component {
@@ -36,6 +34,10 @@ class RestaurantsList extends Component {
 
         return (
             <div className="page-holder">
+
+                <div className="logo-holder">
+                    <h1>Shisheo</h1>
+                </div>
 
                 <SearchBox
                     value={searchQuery}

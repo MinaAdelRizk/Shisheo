@@ -1,10 +1,6 @@
 import React from 'react';
-
 import Rating from '@material-ui/lab/Rating';
 import StarBorderIcon from '@material-ui/icons/esm/StarBorder';
-
-// import { Rating } from '@material-ui/core'
-
 
 
 function RestaurantCard({ rest: r }) {
@@ -17,7 +13,7 @@ function RestaurantCard({ rest: r }) {
 
                 <div className="left-side">
                     <h5 className="card-title">{r.name}</h5>
-                    <p className="card-text">{r.tags.map(t => `${t}, `)}</p>
+                    <p className="card-text">{r.tags.map(t => ` '${t}'`)}</p>
                     <p className="card-text">
                         <small className="text-muted">Delivery: AED {r.deliveryCharges}</small><br />
                     </p>

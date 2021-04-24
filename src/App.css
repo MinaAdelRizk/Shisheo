@@ -18,10 +18,16 @@
   padding-left: 2.375rem !important;
   border-radius: 10px !important;
   border: 2px solid #4950577d !important;
-
-    position: relative !important;
-    top: -90vh;
-    margin: 0px 25px;
+}
+.mapSearch {
+  position: relative !important;
+  top: -89vh;
+  border-radius: 10px !important;
+  border: 2px solid #4950577d !important;
+  width: 90%;
+  margin: 0 auto;
+  height: 38px;
+  padding-left: 2.375rem !important;
 }
 .search-icon {
   font-weight: 600;

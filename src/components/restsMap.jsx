@@ -47,15 +47,32 @@ function Map() {
 
     let [zoom, setZoom] = useState(10) // Map Zoom
     let [pos, setPos] = useState({ lat: 25.117676, lng: 55.201827 }) // Map Center
-    let [selectedRst, setSelectedRst] = useState();
+    let [selectedRst, setSelectedRst] = useState(null);
     let [searchQuery, setSearchQuery] = useState("");
     let locations = getRestaurants()
 
     useEffect(() => {
-        locations.length === 1 ? setSelectedRst(locations[0]) : setSelectedRst(null);
+
+        locations = (searchQuery !== "") ? locations.filter(r => r.name.toLowerCase().includes(searchQuery.toLowerCase())) : locations;
+
+        locations.length === 1 ? focus(locations[0]) : reset();
+
+        function focus(r) {
+            setSelectedRst(r);
+            setZoom(13);
+            setPos(r.location)
+        }
+        function reset() {
+            setZoom(11);
+            setPos(pos);
+            setSelectedRst("")
+        }
+
+
+        // locations.length === 1 ? (setSelectedRst(locations[0])) : setSelectedRst(null);
+
     }, [searchQuery]);
 
-    locations = (searchQuery !== "") ? locations.filter(r => r.name.toLowerCase().includes(searchQuery.toLowerCase())) : locations;
 
     return (
 

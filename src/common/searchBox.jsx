@@ -3,6 +3,7 @@ import React from "react";
 const SearchBox = ({ value, onChange }) => {
 
     const placeholder = "Search Restaurants..."
+    const styling = (window.location.pathname === "/locations") ? "mapSearch" : "form-control mb-3 search-bar";
 
     return (
         <div>
@@ -14,7 +15,7 @@ const SearchBox = ({ value, onChange }) => {
                 <input
                     type="text"
                     name="query"
-                    className="form-control mb-3 search-bar"
+                    className={styling}
                     placeholder={placeholder}
                     value={value}
                     onChange={e => onChange(e.currentTarget.value)}

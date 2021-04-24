@@ -8,12 +8,20 @@
 .rt {
   float: right;
 }
+
+.logo-holder {
+  width: 20%;
+  float: left;
+  margin: 1rem 0rem;
+} 
+.logo-holder img {
+  max-width: 100%;
+}
+
 .page-holder {
   padding: 1rem;
 }
-.logo-holder {
-  padding: 0 1rem;
-}
+
 .search-bar {
   padding-left: 2.375rem !important;
   border-radius: 10px !important;
@@ -24,10 +32,12 @@
   top: -89vh;
   border-radius: 10px !important;
   border: 2px solid #4950577d !important;
-  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
   height: 38px;
   padding-left: 2.375rem !important;
+} .mapSearch:focus {
+  border: none !important;
 }
 .search-icon {
   font-weight: 600;
@@ -36,6 +46,9 @@
   z-index: 2;
   pointer-events: auto;
   color: #000;
+} .mapSearchIcon {
+    top: -89vh !important;
+    margin-left: 5% !important;
 }
 .card {
   margin: auto;

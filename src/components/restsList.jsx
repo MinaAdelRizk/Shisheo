@@ -36,12 +36,13 @@ class RestaurantsList extends Component {
             <div className="page-holder">
 
                 <div className="logo-holder">
-                    <h1>Shisheo</h1>
+                    <img src="./logo.png" alt="" />
                 </div>
 
                 <SearchBox
                     value={searchQuery}
                     onChange={this.handleSearch}
+                    placeholder="Search Restaurants..."
                 />
 
                 <ul className="p-0">

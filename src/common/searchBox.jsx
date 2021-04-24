@@ -1,28 +1,33 @@
 import React from "react";
+import DataList from '../utils/dataList'
+const SearchBox = ({ value, onChange, placeholder }) => {
 
-const SearchBox = ({ value, onChange }) => {
+    let inputStyle = "form-control mb-3 search-bar"
+    let iconStyle = "fa fa-search search-icon"
 
-    const placeholder = "Search Restaurants..."
-    const styling = (window.location.pathname === "/locations") ? "mapSearch" : "form-control mb-3 search-bar";
+    if (window.location.pathname === "/locations") {
+        inputStyle += " mapSearch";
+        iconStyle += " mapSearchIcon";
+    }
 
     return (
         <div>
-
             <div className="input-group">
 
-                <i className="fa fa-search search-icon"></i>
+                <i className={iconStyle}></i>
 
                 <input
                     type="text"
                     name="query"
-                    className={styling}
+                    className={inputStyle}
                     placeholder={placeholder}
                     value={value}
                     onChange={e => onChange(e.currentTarget.value)}
+                    list="locations" // for datalist ID
                 />
-
+                <DataList />
             </div>
-        </div>
+        </div >
     );
 };
 

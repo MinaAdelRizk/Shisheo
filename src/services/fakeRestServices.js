@@ -31,10 +31,39 @@ const rests = [
             lng: 55.203476
         }
     },
-
     {
         _id: "5b21ca3eeb7f6fbccd471816",
         imgUrl: "https://picsum.photos/id/625/200/300",
+        name: "The Butcher",
+        tags: ["Arabic", "Lebenese", "Chinese"],
+        deliveryCharges: 12,
+        promo: "20% Off On Selected Items",
+        rating: 3.5,
+        deliveryTime: 25,
+        paymentMethods: "Cash-On-Delivery",
+        location: {
+            lat: 25.178286,
+            lng: 55.227245
+        }
+    },
+    {
+        _id: "5b21ca3eeb7f6fbccd471817",
+        imgUrl: "https://picsum.photos/id/623/200/300",
+        name: "Pizza Hut",
+        tags: ["Arabic", "Indian", "Japaneese"],
+        deliveryCharges: 12,
+        promo: "20% Off On Selected Items",
+        rating: 3.5,
+        deliveryTime: 25,
+        paymentMethods: "Cash-On-Delivery",
+        location: {
+            lat: 25.206556,
+            lng: 55.245660
+        }
+    },
+    {
+        _id: "5b21ca3eeb7f6fbccd471818",
+        imgUrl: "https://picsum.photos/id/621/200/300",
         name: "CheesCake Factory",
         tags: ["Arabic", "Lebenese", "Chinese"],
         deliveryCharges: 12,
@@ -43,10 +72,11 @@ const rests = [
         deliveryTime: 25,
         paymentMethods: "Cash-On-Delivery",
         location: {
-            lat: 25.097352,
-            lng: 55.175098
+            lat: 25.225069,
+            lng: 55.265906
         }
-    }
+    },
+
 ]
 
 export function getRestaurants() {

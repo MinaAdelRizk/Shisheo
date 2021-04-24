@@ -1,55 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import SearchBox from '../common/searchBox';
+
 import {
     GoogleMap,
     withScriptjs,
     withGoogleMap,
     Marker,
-    InfoWindow
+    InfoWindow,
+
 } from 'react-google-maps'
 
 import { getRestaurants } from './../services/fakeRestServices';
 
-// const {
-//     SearchBox
-// } = require("react-google-maps/lib/components/places/StandaloneSearchBox");
-
-
-// const Box = () => {
-//     return (
-//         <SearchBox
-//             ref={props.onSearchBoxMounted}
-//             bounds={props.bounds}
-//             onPlacesChanged={props.onPlacesChanged}
-//         >
-//             <input
-//                 type="text"
-//                 placeholder="Search restaurants..."
-//                 style={{
-//                     boxSizing: `border-box`,
-//                     border: `1px solid transparent`,
-//                     width: `80vw`,
-//                     height: `3rem`,
-//                     padding: `0 12px`,
-//                     borderRadius: `3px`,
-//                     boxShadow: `0 2px 6px rgba(0, 0, 0, 0.3)`,
-//                     fontSize: `14px`,
-//                     outline: `none`,
-//                     textOverflow: `ellipses`
-//                 }}
-//             />
-//         </SearchBox>
-//     )
-// }
-
 
 function Map() {
 
-    let [zoom, setZoom] = useState(10) // Map Zoom
+    let [zoom, setZoom] = useState(11) // Map Zoom
     let [pos, setPos] = useState({ lat: 25.117676, lng: 55.201827 }) // Map Center
     let [selectedRst, setSelectedRst] = useState(null);
     let [searchQuery, setSearchQuery] = useState("");
     let locations = getRestaurants()
+
+    const defaultMapOptions = {
+        fullscreenControl: false,
+        disableDefaultUI: true,
+        defaultAnimation: 10
+    };
+
 
     useEffect(() => {
 
@@ -64,26 +41,23 @@ function Map() {
         }
         function reset() {
             setZoom(11);
-            setPos(pos);
-            setSelectedRst("")
+            setPos({ lat: 25.117676, lng: 55.201827 });
+            setSelectedRst(null)
         }
-
-
-        // locations.length === 1 ? (setSelectedRst(locations[0])) : setSelectedRst(null);
-
     }, [searchQuery]);
 
-
     return (
-
 
         <GoogleMap
             zoom={zoom}
             center={pos}
+            defaultOptions={defaultMapOptions}
+
         >
             <SearchBox
                 value={searchQuery}
                 onChange={setSearchQuery}
+                placeholder="Search Restaurants..."
             />
 
             {locations.map(r => (
@@ -94,10 +68,9 @@ function Map() {
                         url: '/location.svg',
                         scaledSize: new window.google.maps.Size(40, 30)
                     }}
-                    onClick={
-                        () => setSelectedRst(r)
-                    }
+                    onClick={() => setSelectedRst(r)}
                 />
+
             ))}
 
             {selectedRst && (
@@ -114,6 +87,7 @@ function Map() {
                 </InfoWindow>
 
             )}
+
         </GoogleMap>
     )
 }

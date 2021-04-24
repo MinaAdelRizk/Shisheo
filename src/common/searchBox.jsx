@@ -25,7 +25,7 @@ const SearchBox = ({ value, onChange, placeholder }) => {
                     onChange={e => onChange(e.currentTarget.value)}
                     list="locations" // for datalist ID
                 />
-                <DataList />
+                {value && <DataList />}
             </div>
         </div >
     );
